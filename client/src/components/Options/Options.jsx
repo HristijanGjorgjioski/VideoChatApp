@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Options = () => {
+const Options = ({ children }) => {
     return (
         <div>
-            
+            {children}
         </div>
     )
 }
