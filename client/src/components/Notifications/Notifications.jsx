@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+import { SocketContext } from '../../contexts/SocketContext'
 
 const Notifications = () => {
+    const { answerCall, call, callAccepted } = useContext(SocketContext)
+
     return (
-        <div>
-            
-        </div>
+        <>
+            {call.isRecivedCall && !callAccepted && (
+                <div style={{ display: 'flex', justifyContent: "center" }}>
+                    <h1>{call.name} is calling: </h1>
+                </div>
+            )}
+        </>
     )
 }
 
